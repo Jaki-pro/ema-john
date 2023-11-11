@@ -1,0 +1,21 @@
+.shop_container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    
+}
+.products{
+    border-right: 1px solid rgb(128, 122, 107);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: center; 
+}
+.cart{ 
+    background-color: #FFE0B3;  
+    height: 400px;
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+}

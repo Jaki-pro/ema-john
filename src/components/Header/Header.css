@@ -1,0 +1,12 @@
+.header{
+    display: flex; 
+    background-color: #1C2B35;
+    justify-content: space-between;
+    padding: 10px;
+    line-height:40px; 
+}
+.header a{
+    margin-right: 30px;
+    font-size: 20px;
+    color: #dddddd;
+}
