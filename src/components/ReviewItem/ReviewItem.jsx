@@ -11,6 +11,7 @@ const ReviewItem = ({ product , handleRemoveItem}) => {
                 <div style={{ width: '300px' }}>
                     <h4>{product.name}</h4>
                     <p>Price: ${product.price}</p>
+                    <p>Quantity: {product.quantity}</p>
                 </div>
                 <button onClick={()=>handleRemoveItem(product.id)} style={{ width: '60px', display: 'block', height: '40px', color: 'white' }}><FontAwesomeIcon icon={faTrashAlt} /></button>
             </div>
