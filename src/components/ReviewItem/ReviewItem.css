@@ -1,0 +1,25 @@
+.review-item{
+    width: 500px;
+    border: 2px solid rgb(208, 200, 179);
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+.review-item img{
+    width: 90px;
+    height: 90px;
+    display: block;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.second{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.second button{
+    border-radius: 100px;
+    background-color: rgb(226, 193, 224);
+}
