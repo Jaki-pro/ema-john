@@ -9,7 +9,6 @@ const Product = ({addToCart, product}) => {
             <img src={product.img} alt="" />
             <h3 className='name'>{product.name}</h3>
             <p>Price: ${product.price}</p>
-            
             <small><p>Manufacturer: {product.seller}</p></small> 
             <small><p>Rating: {product.ratings} star</p></small>  
             <button onClick={()=> addToCart(product)} className="button">Add to Cart <FontAwesomeIcon icon={faCartShopping} /></button>

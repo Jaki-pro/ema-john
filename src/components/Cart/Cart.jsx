@@ -1,17 +1,17 @@
-import React from 'react';
+ 
 import './Cart.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash, faStreetView, faArrowRight} from '@fortawesome/free-solid-svg-icons'
-const Cart = ({selected}) => {
+import { faTrash, faArrowRight} from '@fortawesome/free-solid-svg-icons'
+const Cart = ({cart}) => {
     let total=0;
-    for(let i=0; i<selected.length;i++) total+=selected[i].price; 
+    for(let i=0; i<cart.length;i++) total+=cart[i].price; 
     let shipping = 0;
     if(total<100 && total!=0) shipping=20;
     const tax = (total*5/100);
     return (
         <>
             <h3>Order Summary</h3>
-            <p>Selected Items: {selected.length}</p>
+            <p>Selected Items: {cart.length}</p>
             <p>Total Price: ${total}</p>
             <p>Total Shipping Cost: ${shipping.toFixed(2)}</p>
             <p>Tax: ${tax.toFixed(2)}</p>
