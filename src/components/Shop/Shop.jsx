@@ -12,17 +12,41 @@ const Shop = () => {
         .then(res=>res.json())
         .then(data=>setProducts(data));
     },[])
-     
-    const addToCart=(product)=>{
-        setCart([...cart, product]) 
+    const addToCart=(product)=>{ 
+        const exists = cart.find(pd=>pd.id===product.id);
+        let newCart = [];
+        if(!exists) 
+        {
+            product.quantity=1; 
+            newCart = [...cart, product];
+        }
+        else
+        {
+            exists.quantity +=1;
+            const remaining = cart.filter(pd=>pd.id!=exists.id);
+            newCart = [...remaining, exists];
+        }
+        setCart(newCart);
         addToDb(product.id); 
-    }
-    const [finalCart, setFinalCart] = useState([]);
+    }  
     useEffect(()=>{
+        //console.log(products);
         const storedCart = getShoppingCart();
-        console.log(storedCart);
-         
-    },[]) 
+        let savedCart=[]; 
+        for(const id in storedCart) 
+        {
+            const addedProduct = products.find(product=>product.id===id);
+            if(addedProduct)
+            { 
+                addedProduct.quantity = storedCart[id]; 
+                savedCart.push(addedProduct)
+            }
+            //console.log('added ', addedProduct);
+        }
+        setCart(savedCart)
+    },[products])  
+    //console.log(cart);
+    
     return (
 
         <div className='shop_container'>
